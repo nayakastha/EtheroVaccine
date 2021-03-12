@@ -1,7 +1,14 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/signup.dart';
+import 'package:flutter_application/screens/dashboard.dart';
+import 'package:flutter_application/screens/signin.dart';
 
-class GetStrarted extends StatelessWidget {
+class SignUP extends StatefulWidget {
+  @override
+  _SignUPState createState() => _SignUPState();
+}
+
+class _SignUPState extends State<SignUP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,17 +17,18 @@ class GetStrarted extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Register for COVID Vaccine",
+            "Welcome Onboard!",
             style: Theme.of(context).textTheme.headline1,
           ),
           Text(
-            "Register yourself for Indian Goverment’s COVID VACCINE",
+            "Let’s help you to get vaccinated",
             style: Theme.of(context).textTheme.bodyText1,
           ),
+          //text fields
           InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => SignUP()));
+                  builder: (BuildContext context) => DashBoard()));
             },
             child: Container(
               height: 40,
@@ -29,11 +37,20 @@ class GetStrarted extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   shape: BoxShape.rectangle),
               child: Text(
-                "Get Started",
+                "Register",
                 style: Theme.of(context).textTheme.button,
               ),
             ),
-          )
+          ),
+          RichText(
+              text: TextSpan(
+                  text: "Already have an account ? Sign In",
+                  style: Theme.of(context).textTheme.bodyText2,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => SignIN()));
+                    }))
         ],
       ),
     );
