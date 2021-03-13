@@ -12,7 +12,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  
+  connectivity: ^3.0.2
+  firebase_core: ^0.7.0
+  auth: ^7.3.2
+  shared_preferences: ^0.5.3+4
+  url_launcher: ^5.1.0
+  ethereum: ^4.0.3
+  web3dart: ^1.2.3
 
 dev_dependencies:
   flutter_test:
